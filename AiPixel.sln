@@ -1,0 +1,18 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiPixel", "AiPixel.csproj", "{7C3E1A90-4B2D-4F18-9C6A-01A01E3CAIPX}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AnyCPU = Debug|AnyCPU
+		Release|AnyCPU = Release|AnyCPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C3E1A90-4B2D-4F18-9C6A-01A01E3CAIPX}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{7C3E1A90-4B2D-4F18-9C6A-01A01E3CAIPX}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{7C3E1A90-4B2D-4F18-9C6A-01A01E3CAIPX}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{7C3E1A90-4B2D-4F18-9C6A-01A01E3CAIPX}.Release|AnyCPU.Build.0 = Release|AnyCPU
+	EndGlobalSection
+EndGlobal

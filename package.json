@@ -1,0 +1,9 @@
+{
+  "name": "ai-pixel-quotation-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static ASP.NET Web Forms demo — shutter quotation wizard.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

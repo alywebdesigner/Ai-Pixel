@@ -1,0 +1,131 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="AiPixel.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="AI Pixel quotation studio — build professional shutter, motor, and controller estimates in minutes." />
+    <title><%= Page.Title %> · AI Pixel</title>
+    <link rel="icon" href="/Content/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet" />
+    <link href="/Content/Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="aspnetForm" action="#" method="post" onsubmit="return false;">
+        <div class="app-shell">
+            <header class="app-header">
+                <div class="brand">
+                    <img src="/Content/logo.svg" alt="" width="36" height="36" />
+                    <div>
+                        <div class="brand-name">AI Pixel</div>
+                        <div class="brand-tag">Quotation Studio</div>
+                    </div>
+                </div>
+                <div class="header-center d-none d-md-block">
+                    <div class="quote-chip">
+                        <span id="hdrQuoteId">PIX-····</span>
+                        <span class="dot">·</span>
+                        <span>20 Aug 2026</span>
+                    </div>
+                </div>
+                <div class="header-aside">
+                    <div class="header-total" id="hdrTotal">$0.00</div>
+                    <div class="user-pill">
+                        <div class="user-avatar">AR</div>
+                        <div class="d-none d-sm-block">
+                            <div class="user-name">Alex Rivera</div>
+                            <div class="user-role">Senior Estimator</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <aside class="app-rail" id="appRail">
+                <p class="rail-kicker">Create quotation</p>
+                <h1 class="rail-title">Build a client estimate in five steps.</h1>
+
+                <nav class="step-nav" aria-label="Quotation steps">
+                    <button type="button" class="step-link is-active" data-goto="1">
+                        <span class="step-index">1</span>
+                        <span class="step-copy">
+                            <strong>Client</strong>
+                            <small>Contact &amp; map pin</small>
+                        </span>
+                    </button>
+                    <button type="button" class="step-link" data-goto="2" disabled>
+                        <span class="step-index">2</span>
+                        <span class="step-copy">
+                            <strong>Shutters</strong>
+                            <small>Openings &amp; sizes</small>
+                        </span>
+                    </button>
+                    <button type="button" class="step-link" data-goto="3" disabled>
+                        <span class="step-index">3</span>
+                        <span class="step-copy">
+                            <strong>Motors</strong>
+                            <small>Matched to weight</small>
+                        </span>
+                    </button>
+                    <button type="button" class="step-link" data-goto="4" disabled>
+                        <span class="step-index">4</span>
+                        <span class="step-copy">
+                            <strong>Controllers</strong>
+                            <small>Optional extras</small>
+                        </span>
+                    </button>
+                    <button type="button" class="step-link" data-goto="5" disabled>
+                        <span class="step-index">5</span>
+                        <span class="step-copy">
+                            <strong>Summary</strong>
+                            <small>Gemini + PDF</small>
+                        </span>
+                    </button>
+                </nav>
+
+                <div class="rail-total">
+                    <div class="rail-total-label">Running total</div>
+                    <div class="rail-total-value" id="railGrandTotal">$0.00</div>
+                    <div class="rail-total-meta" id="railTotalMeta">No line items yet</div>
+                    <div class="rail-bars" id="railBars" hidden>
+                        <div class="rail-bar">
+                            <span>Shutters</span>
+                            <b id="railShutters">$0</b>
+                        </div>
+                        <div class="rail-bar">
+                            <span>Motors</span>
+                            <b id="railMotors">$0</b>
+                        </div>
+                        <div class="rail-bar">
+                            <span>Controllers</span>
+                            <b id="railControllers">$0</b>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="app-main">
+                <div class="progress-track" aria-hidden="true">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+        </div>
+    </form>
+
+    <div class="toast-host" id="toastHost" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.2/dist/html2pdf.bundle.min.js"></script>
+    <script src="/Scripts/data.js"></script>
+    <script src="/Scripts/app.js"></script>
+</body>
+</html>
